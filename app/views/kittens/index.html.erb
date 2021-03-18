@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Kittens</h1>
+
+    <% @kittens.each do |kitten| %>
+      <div style="h3 font-size: 25px mb-3"><%= link_to kitten.name, kitten_path(kitten) %></div>
+      <div>
+     
+      <div>
+      Age: <%= kitten.age %> |
+      Cuteness: <%= kitten.cuteness %> |
+      Softness: <%= kitten.softness %> |
+      <td><%= link_to 'Show', kitten %> |
+     <%= link_to 'Edit', edit_kitten_path(kitten) %> |
+      <%= link_to 'Destroy', kitten, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+    <br>
+  <% end %>
+    
+
+<%= link_to 'New Kitten', new_kitten_path %>
